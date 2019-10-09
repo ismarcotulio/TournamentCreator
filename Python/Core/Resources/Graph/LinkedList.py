@@ -1,4 +1,4 @@
-from Resources.Node import *
+from Core.Resources.Graph.Node import *
 
 class LinkedList:
 
@@ -7,7 +7,7 @@ class LinkedList:
 
 	def add(self,item):
 		if self.first == None:
-			self.first == Node(item)
+			self.first = Node(item)
 		else:
 			if self.AlreadyExist(item.name) == False:
 				current = self.first
@@ -18,26 +18,20 @@ class LinkedList:
 				return False
 
 	def search(self, name):
-		if self.first == None:
-			Return False
-		else:
-			current = self.first
-			while(current.next):
-				if current.item.name == name:
-					return current
-				current = current.next
-			return False		
+		current = self.first
+		while(current):
+			if current.item.name == name:
+				return current
+			current = current.next
+		return False		
 
 	def AlreadyExist(self, name):
-		if self.first == None:
-			Return False
-		else:
-			current = self.first
-			while(current.next):
-				if current.item.name == name:
-					return True
-				current = current.next
-			return False		
+		current = self.first
+		while(current):
+			if current.item.name == name:
+				return True
+			current = current.next
+		return False		
 
 
 

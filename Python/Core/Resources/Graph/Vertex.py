@@ -1,4 +1,4 @@
-from Resources.LinkedList import *
+from Core.Resources.Graph.LinkedList import *
 
 class Vertex:
 

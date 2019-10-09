@@ -7,6 +7,9 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Core.Resources.Graph.Graph import *
+from Core.Memory.Memory import *
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -178,6 +181,16 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
+
+        self.TDAGraph = Graph()
+        self.memory = Memory("Core/Memory/mem.tsv")
+        self.dictGraph = self.memory.TSVtoDict()
+        self.memory.DicttoTDA(self.dictGraph, self.TDAGraph)
+        self.memory.exit()
+        print(" ")
+        self.TDAGraph.print()
+
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
