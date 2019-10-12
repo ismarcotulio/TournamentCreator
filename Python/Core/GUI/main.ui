@@ -291,7 +291,7 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <widget class="QPushButton" name="AddParticipant">
+           <widget class="QPushButton" name="Add">
             <property name="palette">
              <palette>
               <active>
